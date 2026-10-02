@@ -8,113 +8,146 @@
 <body>
 
     <header>
+        <h1>Laurita Elsa Kenfack</h1>
+        <p>B.Sc. Informatik - Schwerpunkt Intelligent Systems | RPTU Kaiserslautern-Landau</p>
         <nav>
             <ul>
-                <li><a href="#hero">Startseite</a></li>
                 <li><a href="#about">Über mich</a></li>
-                <li><a href="#skills">Kenntnisse</a></li>
+                <li><a href="#skills">Kompetenzen</a></li>
                 <li><a href="#projects">Projekte</a></li>
+                <li><a href="#contact">Kontakt</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero">
-    <img src="images/profile.jpg" alt="Foto von Laurita Elsa Kenfack" width="150">
-    <h1>Laurita Elsa Kenfack</h1>
-    <h2>Informatikstudentin &amp; Front-End-Entwicklerin</h2>
-    <p>Informatikstudentin im 4. Semester an der RPTU Kaiserslautern, leidenschaftlich für die Entwicklung moderner Webanwendungen und intelligenter Softwarelösungen mit React.</p>
-    </section>
-
-    <section id="about">
-        <h2>Über mich</h2>
-        <p>Derzeit studiere ich B.Sc. Informatik an der RPTU Kaiserslautern-Landau mit dem Schwerpunkt <strong>Intelligent Systems</strong>. Ich verbinde fundierte theoretische Kenntnisse in Algorithmen, Java und Python mit der praktischen Entwicklung moderner Web-Technologien.</p>
-        <p>Als aktives Mitglied von <strong>JustCode KL</strong> entwickle mich in den Bereichen React, JavaScript und REST-APIs weiter. Mein Ziel ist es, benutzerfreundliche, performante und visuell ansprechende Web-Interfaces zu gestalten.</p>
-    </section>
-
-    <section id="skills">
-        <h2>Kenntnisse & Werkzeuge</h2>
-        
-        <h3>Technologien</h3>
-        <ul>
-            <li>Web / Front-End: HTML, CSS, JavaScript, React, React Native</li>
-            <li>Back-End & Sprachen: Java (Spring Boot), Python, C++, F#</li>
-            <li>Datenbanken & Tools: MySQL, PostgreSQL, Git, GitLab, GitHub, VS Code, IntelliJ</li>
-        </ul>
-
-        <h3>Ziele für diesen Kurs</h3>
-        <ol>
-            <li>Erstellung und Bereitstellung der strukturierten HTML-Basis (Portfolio V1)</li>
-            <li>Umsetzung eines modernen und responsiven Designs mit CSS (Flexbox & Grid)</li>
-            <li>Integration interaktiver Projekte (wie Tortellini Timer oder Smart Mensa) mit JS und React</li>
-        </ol>
-    </section>
-    <section id="projects">
-        <h2>Projekte</h2>
-
-   <article>
-            <img src="images/tortellini.jpg" alt="Tortellini Timer App" width="300">
-            <h3>
-                <a href="https://github.com/Laurita003/Tortellini-Timer" target="_blank" rel="noopener noreferrer">
-                    Tortellini Timer
-                </a>
-            </h3>
-            <p>Eine interaktive Web-Anwendung zur präzisen Zeitmessung beim Kochen, entwickelt mit React.</p>
-            <p><strong>Technologien:</strong> HTML, CSS, JavaScript, React</p>
+    <main>
+        <!-- Über mich -->
+        <section id="about">
+            <h2>Über mich</h2>
+            <img src="images/profile.jpg" alt="Laurita Elsa Kenfack Profilbild" width="150">
             <p>
-                <a href="https://laurita003.github.io/Tortellini-Timer/" target="_blank" rel="noopener noreferrer">
-                    Live-Demo ansehen &rarr;
-                </a>
+                Informatikstudentin im 5. Semester an der RPTU Kaiserslautern-Landau mit Schwerpunkt Intelligent Systems. 
+                Begeistert von Künstlicher Intelligenz, Softwareentwicklung und modernen Web-Technologien.
             </p>
-        </article>
+        </section>
 
-        <article>
-            <img src="images/mensa.jpg" alt="Smart Mensa App" width="300">
-            <h3>
-                <a href="https://gitlab.rhrk.uni-kl.de/ruw43piz/smart-mensa" target="_blank" rel="noopener noreferrer">
-                    Smart Mensa
-                </a>
-            </h3>
-            <p>Eine Anwendung zur Anzeige des Speiseplans und zur Verwaltung von Lieblingsgerichten der RPTU Mensa.</p>
-            <p><strong>Technologien:</strong> Java, Spring Boot, React, REST-API, MySQL</p>
-            <p>
-                <a href="https://gitlab.rhrk.uni-kl.de/ruw43piz/smart-mensa" target="_blank" rel="noopener noreferrer">
-                    Repository ansehen &rarr;
-                </a>
-            </p>
-        </article>
-    </section>
+        <section id="skills">
+            <h2>Kompetenzen & Technologien</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bereich</th>
+                        <th>Technologien & Tools</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Web-Entwicklung</td>
+                        <td>HTML5, CSS3, JavaScript, React</td>
+                    </tr>
+                    <tr>
+                        <td>Backend & Software</td>
+                        <td>Java (Spring Boot, REST-API), C/C++</td>
+                    </tr>
+                    <tr>
+                        <td>Data & Mathematik</td>
+                        <td>Python (NumPy, Pandas, Matplotlib), F#</td>
+                    </tr>
+                    <tr>
+                        <td>Datenbanken & Tools</td>
+                        <td>MySQL, PostgreSQL, Git, GitHub, GitLab, VS Code, IntelliJ</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-    <section id="contact">
-        <h2>Kontakt</h2>
-        <p>Direkt per E-Mail erreichbar: <a href="mailto:lauritakenfack2@gmail.com">lauritakenfack2@gmail.com</a></p>
-        
-        <form action="#" method="post">
-            <div>
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required placeholder="Ihr Name">
-            </div>
-            <br>
-            <div>
-                <label for="email">E-Mail:</label><br>
-                <input type="email" id="email" name="email" required placeholder="ihre.email@example.com">
-            </div>
-            <br>
-            <div>
-                <label for="message">Nachricht:</label><br>
-                <textarea id="message" name="message" rows="4" required placeholder="Ihre Nachricht..."></textarea>
-            </div>
-            <br>
-            <button type="submit">Nachricht senden</button>
-        </form>
-    </section>
+        <section id="projects">
+            <h2>Projekte</h2>
+
+            <!-- Tortellini Timer -->
+            <article>
+                <img src="images/tortellini.jpg" alt="Tortellini Timer App" width="300">
+                <h3>
+                    <a href="https://github.com/Laurita003/Tortellini-Timer" target="_blank" rel="noopener noreferrer">
+                        Tortellini Timer
+                    </a>
+                </h3>
+                <p>Eine interaktive Pomodoro-Webanwendung zur präzisen Zeitmessung beim Kochen mit integrierter Aufgabenverwaltung und LocalStorage-Datenhaltung.</p>
+                <p><strong>Technologien:</strong> HTML, CSS, JavaScript, React</p>
+                <p>
+                    <a href="https://laurita003.github.io/Tortellini-Timer/" target="_blank" rel="noopener noreferrer">
+                        Live-Demo ansehen &rarr;
+                    </a>
+                </p>
+            </article>
+
+            <!-- Smart Mensa -->
+            <article>
+                <img src="images/mensa.jpg" alt="Smart Mensa App" width="300">
+                <h3>
+                    <a href="https://gitlab.rhrk.uni-kl.de/ruw43piz/smart-mensa" target="_blank" rel="noopener noreferrer">
+                        Smart Mensa
+                    </a>
+                </h3>
+                <p>Eine Anwendung zur Anzeige des Speiseplans und zur Verwaltung von Lieblingsgerichten der RPTU Mensa im agilen Teamumfeld.</p>
+                <p><strong>Technologien:</strong> Java, Spring Boot, React, REST-API, MySQL</p>
+                <p>
+                    <a href="https://gitlab.rhrk.uni-kl.de/ruw43piz/smart-mensa" target="_blank" rel="noopener noreferrer">
+                        Repository ansehen &rarr;
+                    </a>
+                </p>
+            </article>
+
+            <!-- Ticketverkauf -->
+            <article>
+                <h3>
+                    <a href="https://github.com/Laurita003/Ticketverkauf" target="_blank" rel="noopener noreferrer">
+                        Ticketverkauf (Java)
+                    </a>
+                </h3>
+                <p>Entwicklung eines automatisierten Systems zur Ticketverwaltung mit Fokus auf Nebenläufigkeit und thread-sichere Datenverarbeitung.</p>
+                <p><strong>Technologien:</strong> Java, Concurrency, Multithreading</p>
+                <p>
+                    <a href="https://github.com/Laurita003/Ticketverkauf" target="_blank" rel="noopener noreferrer">
+                        Repository ansehen &rarr;
+                    </a>
+                </p>
+            </article>
+        </section>
+
+        <section id="contact">
+            <h2>Kontakt</h2>
+            <p>Schreiben Sie mir direkt eine Nachricht:</p>
+
+            <form action="#" method="post">
+                <div>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="user_name" placeholder="Ihr Name" required>
+                </div>
+                <br>
+                <div>
+                    <label for="email">E-Mail:</label><br>
+                    <input type="email" id="email" name="user_email" placeholder="ihre.email@example.com" required>
+                </div>
+                <br>
+                <div>
+                    <label for="message">Nachricht:</label><br>
+                    <textarea id="message" name="user_message" rows="5" placeholder="Ihre Nachricht..." required></textarea>
+                </div>
+                <br>
+                <button type="submit">Nachricht senden</button>
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 Laurita Elsa Kenfack. Alle Rechte vorbehalten.</p>
         <p>
             Finden Sie mich auf: 
             <a href="https://github.com/Laurita003" target="_blank" rel="noopener noreferrer">GitHub</a> | 
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/laurita-kenfack-b97b0a3aa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </p>
     </footer>
+
 </body>
 </html>
