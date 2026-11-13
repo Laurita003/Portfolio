@@ -4,153 +4,223 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Laurita Elsa Kenfack</title>
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Fichier CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header & Navigation -->
-    <header>
-        <h1>👩‍💻 Laurita Elsa Kenfack</h1>
-        <p><strong>B.Sc. Informatik</strong> - <em>Schwerpunkt Intelligent Systems</em> | RPTU Kaiserslautern-Landau</p>
-        
-        <nav>
-            <p>
-                <a href="#about">📌 Über mich</a> | 
-                <a href="#skills">🛠️ Kompetenzen</a> | 
-                <a href="#projects">🚀 Projekte</a> | 
-                <a href="#contact">📬 Kontakt</a> 
-            </p>
-        </nav>
+    <!-- Navigation fixe -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">Laurita<span>.dev</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">Über mich</a></li>
+                <li><a href="#focus">Fokus & Interessen</a></li>
+                <li><a href="#skills">Kompetenzen</a></li>
+                <li><a href="#projects">Projekte</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <span class="badge">RPTU Kaiserslautern-Landau</span>
+            <h1>Laurita Elsa Kenfack</h1>
+            <p class="subtitle">B.Sc. Informatik — Schwerpunkt <strong>Intelligent Systems</strong></p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">Projekte ansehen</a>
+                <a href="cv.pdf" download="CV_Laurita_Elsa_Kenfack.pdf" class="btn btn-outline">📄 Lebenslauf herunterladen</a>
+                <a href="#contact" class="btn btn-outline">Kontakt</a>
+            </div>
+        </div>
     </header>
 
-    <hr>
-
-    <main>
-        <!--Über mich -->
-        <section id="about">
-            <h2>📌 Über mich</h2>
-            <p>
-                <img src="images/profile.jpg" alt="Laurita Elsa Kenfack Profilbild" width="140" align="left" style="margin-right: 15px;">
-                Hallo! Ich bin <strong>Laurita</strong>, Informatikstudentin an der RPTU Kaiserslautern-Landau. Mein Schwerpunkt liegt auf <em>Intelligent Systems</em>, wo ich mich besonders für Künstliche Intelligenz, moderne Software-Architekturen und Web-Technologien begeistere.
-            </p>
-            <p>
-                Neben meinem Studium entwickle ich gerne eigene Projekte, sammle praktische Erfahrung im Programmieren und engagiere mich bei <strong>JustCode KL</strong>. Ich liebe es, komplexe Probleme zu lösen und Neues im Bereich Softwareentwicklung dazuzulernen.
-            </p>
-            <br clear="all">
+    <main class="container">
+        <!-- Über mich -->
+        <section id="about" class="section">
+            <h2 class="section-title">Über mich</h2>
+            <div class="about-grid">
+                <img src="images/profile.jpg" alt="Laurita Elsa Kenfack Profilbild" class="profile-img">
+                <div class="about-text">
+                    <p>
+                        KI und Softwareentwicklung sind meine Leidenschaft! Als Informatikstudentin an der RPTU Kaiserslautern-Landau mit dem Schwerpunkt <em>Intelligent Systems</em> verbinde ich fundierte theoretische Konzepte direkt mit der Praxis.
+                    </p>
+                    <p>
+                        Neben meinem Studium engagiere ich mich aktiv bei <strong>JustCode KL</strong>, sammle praktische Erfahrung im universitären Umfeld und entwickle mit Begeisterung eigene Web- und Softwareanwendungen.
+                    </p>
+                </div>
+            </div>
         </section>
 
-        <hr>
-
-        <!-- Skills -->
-        <section id="skills">
-            <h2>🛠️ Kompetenzen & Technologien</h2>
-            <table border="1" cellpadding="8" cellspacing="0" width="100%">
-                <thead>
-                    <tr bgcolor="#f0f0f0">
-                        <th>Bereich</th>
-                        <th>Technologien & Tools</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Web-Entwicklung</strong></td>
-                        <td>HTML5, CSS3, JavaScript, React</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Backend & Software</strong></td>
-                        <td>Java (Spring Boot, REST-API), C/C++</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Data & Mathematik</strong></td>
-                        <td>Python (NumPy, Pandas, Matplotlib), F#</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Datenbanken & Tools</strong></td>
-                        <td>MySQL, PostgreSQL, Git, GitHub, GitLab, VS Code, IntelliJ</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Nouveau : Fokus & Interessen (Remplace le Werdegang) -->
+        <section id="focus" class="section">
+            <h2 class="section-title">Fokus & Interessen</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>🤖 Intelligent Systems & KI</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem;">
+                        Fasziniert von maschinellem Lernen, algorithmischer Datenmodellierung und intelligenten Systemen zur Automatisierung komplexer Probleme.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <h3>⚡ Scientific Computing</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem;">
+                        Praktische Erfahrung in mathematischer 3D-Visualisierung, numerischen Simulationen und Datenanalyse mit Python (NumPy, Pandas, Matplotlib).
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <h3>🤝 Community & Teamwork</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem;">
+                        Aktives Engagement bei <strong>JustCode KL</strong> zur Unterstützung anderer Studierender beim Erlernen moderner Programmierparadigmen und agiler Web-APIs.
+                    </p>
+                </div>
+            </div>
         </section>
 
-        <hr>
-
-        <!--Projekte -->
-        <section id="projects">
-            <h2>🚀 Projekte</h2>
-
-            <!-- Tortellini Timer -->
-            <article>
-                <h3>🍝 Tortellini Timer</h3>
-                <p><img src="images/Tortellini.jpg" alt="Tortellini Timer App" width="280"></p>
-                <p>Eine interaktive Pomodoro-Webanwendung zur präzisen Zeitmessung beim Kochen mit integrierter Aufgabenverwaltung und LocalStorage-Datenhaltung.</p>
-                <p><strong>Technologien:</strong> <mark>HTML</mark> • <mark>CSS</mark> • <mark>JavaScript</mark> • <mark>React</mark></p>
-                <p>
-                    🔗 <a href="https://github.com/Laurita003/Tortellini-Timer" target="_blank" rel="noopener noreferrer">GitHub Repository</a> | 
-                    🌐 <a href="https://laurita003.github.io/Tortellini-Timer/" target="_blank" rel="noopener noreferrer">Live-Demo ansehen &rarr;</a>
-                </p>
-            </article>
-
-            <br>
-
-            <!-- Smart Mensa -->
-            <article>
-                <h3>🍽️ Smart Mensa</h3>
-                <p><img src="images/mensa.jpg" alt="Smart Mensa App" width="280"></p>
-                <p>Eine Anwendung zur Anzeige des Speiseplans und zur Verwaltung von Lieblingsgerichten der RPTU Mensa im agilen Teamumfeld.</p>
-                <p><strong>Technologien:</strong> <mark>Java</mark> • <mark>Spring Boot</mark> • <mark>React</mark> • <mark>REST-API</mark> • <mark>MySQL</mark></p>
-                <p>
-                    🔗 <a href="https://gitlab.rhrk.uni-kl.de/ruw43piz/smart-mensa" target="_blank" rel="noopener noreferrer">GitLab Repository &rarr;</a>
-                </p>
-            </article>
-
-            <br>
-
-            <!--Ticketverkauf -->
-            <article>
-                <h3>🎟️ Ticketverkauf (Java)</h3>
-                <p><img src="images/ticketverkauf.jpg" alt="Ticketverkauf App" width="280"></p>
-                <p>Entwicklung eines automatisierten Systems zur Ticketverwaltung mit Fokus auf Nebenläufigkeit und thread-sichere Datenverarbeitung.</p>
-                <p><strong>Technologien:</strong> <mark>Java</mark> • <mark>Concurrency</mark> • <mark>Multithreading</mark></p>
-                <p>
-                    🔗 <a href="https://github.com/Laurita003/Ticketverkauf" target="_blank" rel="noopener noreferrer">GitHub Repository &rarr;</a>
-                </p>
-            </article>
+        <!-- Kompetenzen -->
+        <section id="skills" class="section">
+            <h2 class="section-title">Kompetenzen & Technologien</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Web-Entwicklung</h3>
+                    <div class="tags">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>Responsive Design</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Backend & Software</h3>
+                    <div class="tags">
+                        <span>Java</span><span>Spring Boot</span><span>REST-API</span><span>Multithreading</span><span>C / C++</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Data & Mathematik</h3>
+                    <div class="tags">
+                        <span>Python</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>F#</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Datenbanken & Tools</h3>
+                    <div class="tags">
+                        <span>MySQL</span><span>PostgreSQL</span><span>Git</span><span>GitHub / GitLab</span><span>IntelliJ</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <hr>
+        <!-- Projekte -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Projekte</h2>
+            <div class="projects-grid">
 
-        <section id="contact">
-            <h2>📬 Kontakt</h2>
-            <p>Schreiben Sie mir direkt eine Nachricht:</p>
+                <!-- Memory Matrix -->
+                <article class="project-card">
+                    <img src="images/memory-matrix.jpg" alt="Memory Matrix App" class="project-img">
+                    <div class="project-body">
+                        <div class="tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <h3>Memory Matrix</h3>
+                        <p>Ein interaktives visuelles Gedächtnisspiel zur Förderung der räumlichen Merkfähigkeit mit steigenden Schwierigkeitsstufen und dynamischer Raster-Generierung.</p>
+                        <div class="project-links">
+                            <a href="https://laurita003.github.io/memory-matrix/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live-Demo</a>
+                            <a href="https://github.com/Laurita003/memory-matrix" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </article>
 
-            <form action="#" method="post">
-                <p>
-                    <label for="name"><strong>Name:</strong></label><br>
-                    <input type="text" id="name" name="user_name" placeholder="Ihr Name" size="30" required>
-                </p>
-                <p>
-                    <label for="email"><strong>E-Mail:</strong></label><br>
-                    <input type="email" id="email" name="user_email" placeholder="ihre.email@example.com" size="30" required>
-                </p>
-                <p>
-                    <label for="message"><strong>Nachricht:</strong></label><br>
-                    <textarea id="message" name="user_message" rows="5" cols="33" placeholder="Ihre Nachricht..." required></textarea>
-                </p>
-                <p>
-                    <button type="submit">✉️ Nachricht senden</button>
-                </p>
-            </form>
+                <!-- Tortellini Timer -->
+                <article class="project-card">
+                    <img src="images/Tortellini.jpg" alt="Tortellini Timer App" class="project-img">
+                    <div class="project-body">
+                        <div class="tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
+                        </div>
+                        <h3>Tortellini Timer</h3>
+                        <p>Eine interaktive Pomodoro-Webanwendung zur präzisen Zeitmessung beim Kochen mit integrierter Aufgabenverwaltung und LocalStorage-Datenhaltung.</p>
+                        <div class="project-links">
+                            <a href="https://laurita003.github.io/Tortellini-Timer/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live-Demo</a>
+                            <a href="https://github.com/Laurita003/Tortellini-Timer" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Smart Mensa -->
+                <article class="project-card">
+                    <img src="images/mensa.jpg" alt="Smart Mensa App" class="project-img">
+                    <div class="project-body">
+                        <div class="tags">
+                            <span>Java</span><span>Spring Boot</span><span>React</span><span>MySQL</span>
+                        </div>
+                        <h3>Smart Mensa</h3>
+                        <p>Eine Anwendung zur Anzeige des Speiseplans und zur Verwaltung von Lieblingsgerichten der RPTU Mensa im agilen Teamumfeld.</p>
+                        <div class="project-links">
+                            <a href="https://gitlab.rhrk.uni-kl.de/ruw43piz/smart-mensa" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitLab</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Ticketverkauf -->
+                <article class="project-card">
+                    <img src="images/ticketverkauf.jpg" alt="Ticketverkauf App" class="project-img">
+                    <div class="project-body">
+                        <div class="tags">
+                            <span>Java</span><span>Concurrency</span><span>Multithreading</span>
+                        </div>
+                        <h3>Ticketverkauf (Java)</h3>
+                        <p>Entwicklung eines automatisierten Systems zur Ticketverwaltung mit Fokus auf Nebenläufigkeit und thread-sichere Datenverarbeitung.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Laurita003/Ticketverkauf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Kontakt -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Kontakt</h2>
+            <div class="contact-card">
+                <p>Haben Sie Fragen oder möchten Sie zusammenarbeiten? Schreiben Sie mir gerne eine Nachricht:</p>
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <!-- Clé d'accès Web3Forms -->
+                    <input type="hidden" name="access_key" value="7bb0add9-6ae4-42ee-bfb0-9272dfc7e8cb">
+                    
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" placeholder="ihre.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Nachricht</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht..." required></textarea>
+                    </div>
+                    <input type="checkbox" name="botcheck" style="display: none;">
+                    <button type="submit" class="btn btn-primary">Nachricht senden</button>
+                </form>
+            </div>
         </section>
     </main>
 
-    <hr>
-
-    <footer>
-        <p>&copy; 2026 Laurita Elsa Kenfack. Alle Rechte vorbehalten.</p>
-        <p>
-            Finden Sie mich auf: 
-            <a href="https://github.com/Laurita003" target="_blank" rel="noopener noreferrer">GitHub</a> | 
-            <a href="https://www.linkedin.com/in/laurita-kenfack-b97b0a3aa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Laurita Elsa Kenfack. Alle Rechte vorbehalten.</p>
+            <div class="social-links">
+                <a href="https://github.com/Laurita003" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/laurita-kenfack-b97b0a3aa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
     </footer>
 
 </body>
