@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,8 @@
                 <li><a href="#skills">Kompetenzen</a></li>
                 <li><a href="#projects">Projekte</a></li>
                 <li><a href="#contact">Kontakt</a></li>
+                <!-- Bouton Dark/Light Mode -->
+                <li><button id="theme-toggle" class="theme-toggle-btn" title="Theme wechseln" aria-label="Theme wechseln">🌙</button></li>
             </ul>
         </div>
     </nav>
@@ -46,7 +48,9 @@
         <section id="about" class="section">
             <h2 class="section-title">Über mich</h2>
             <div class="about-grid">
-                <img src="images/profile.jpg" alt="Laurita Elsa Kenfack Profilbild" class="profile-img">
+                <div class="profile-container">
+                    <img src="images/profile.jpg" alt="Laurita Elsa Kenfack Profilbild" class="profile-img">
+                </div>
                 <div class="about-text">
                     <p>
                         KI und Softwareentwicklung sind meine Leidenschaft! Als Informatikstudentin an der RPTU Kaiserslautern-Landau mit dem Schwerpunkt <em>Intelligent Systems</em> verbinde ich fundierte theoretische Konzepte direkt mit der Praxis.
@@ -58,7 +62,7 @@
             </div>
         </section>
 
-        <!-- Nouveau : Fokus & Interessen (Remplace le Werdegang) -->
+        <!-- Fokus & Interessen -->
         <section id="focus" class="section">
             <h2 class="section-title">Fokus & Interessen</h2>
             <div class="skills-grid">
@@ -117,10 +121,18 @@
         <!-- Projekte -->
         <section id="projects" class="section">
             <h2 class="section-title">Projekte</h2>
+            
+            <!-- Boutons de filtres interactifs -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Alle</button>
+                <button class="filter-btn" data-filter="web">Web (HTML/JS/React)</button>
+                <button class="filter-btn" data-filter="java">Java & Backend</button>
+            </div>
+
             <div class="projects-grid">
 
                 <!-- Memory Matrix -->
-                <article class="project-card">
+                <article class="project-card" data-category="web">
                     <img src="images/memory-matrix.jpg" alt="Memory Matrix App" class="project-img">
                     <div class="project-body">
                         <div class="tags">
@@ -136,7 +148,7 @@
                 </article>
 
                 <!-- Tortellini Timer -->
-                <article class="project-card">
+                <article class="project-card" data-category="web">
                     <img src="images/Tortellini.jpg" alt="Tortellini Timer App" class="project-img">
                     <div class="project-body">
                         <div class="tags">
@@ -152,7 +164,7 @@
                 </article>
 
                 <!-- Smart Mensa -->
-                <article class="project-card">
+                <article class="project-card" data-category="java">
                     <img src="images/mensa.jpg" alt="Smart Mensa App" class="project-img">
                     <div class="project-body">
                         <div class="tags">
@@ -167,7 +179,7 @@
                 </article>
 
                 <!-- Ticketverkauf -->
-                <article class="project-card">
+                <article class="project-card" data-category="java">
                     <img src="images/ticketverkauf.jpg" alt="Ticketverkauf App" class="project-img">
                     <div class="project-body">
                         <div class="tags">
@@ -177,6 +189,36 @@
                         <p>Entwicklung eines automatisierten Systems zur Ticketverwaltung mit Fokus auf Nebenläufigkeit und thread-sichere Datenverarbeitung.</p>
                         <div class="project-links">
                             <a href="https://github.com/Laurita003/Ticketverkauf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FUTUR PROJET 5 (Prêt à être rempli) -->
+                <article class="project-card" data-category="web">
+                    <img src="images/placeholder.jpg" alt="Neues Projekt 5" class="project-img">
+                    <div class="project-body">
+                        <div class="tags">
+                            <span>Python</span><span>KI</span>
+                        </div>
+                        <h3>Neues Projekt 5</h3>
+                        <p>Hier entsteht bald dein nächstes spannendes Projekt im Bereich KI oder Web-Entwicklung.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-outline btn-sm">Demnächst</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FUTUR PROJET 6 (Prêt à être rempli) -->
+                <article class="project-card" data-category="java">
+                    <img src="images/placeholder.jpg" alt="Neues Projekt 6" class="project-img">
+                    <div class="project-body">
+                        <div class="tags">
+                            <span>Java</span><span>Algorithmen</span>
+                        </div>
+                        <h3>Neues Projekt 6</h3>
+                        <p>Hier entsteht dein sechstes Projekt.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-outline btn-sm">Demnächst</a>
                         </div>
                     </div>
                 </article>
@@ -201,6 +243,11 @@
                         <label for="email">E-Mail</label>
                         <input type="email" id="email" name="email" placeholder="ihre.email@example.com" required>
                     </div>
+                    <!-- Option Betreff (Sujet) ajoutée ici -->
+                    <div class="form-group">
+                        <label for="subject">Betreff</label>
+                        <input type="text" id="subject" name="subject" placeholder="Worum geht es?" required>
+                    </div>
                     <div class="form-group">
                         <label for="message">Nachricht</label>
                         <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht..." required></textarea>
@@ -223,5 +270,7 @@
         </div>
     </footer>
 
+    <!-- Fichier JavaScript (indispensable pour les effets !) -->
+    <script src="script.js"></script>
 </body>
 </html>
