@@ -8,28 +8,125 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Fichier CSS -->
+    <!-- CSS-Datei -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Massgeschneiderte Anpassung für die vollständige Ansicht von Gesicht und Oberkörper */
+        .profile-container {
+            width: 270px;
+            height: 330px;
+            overflow: hidden;
+            border-radius: 20px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-md);
+        }
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+        
+        /* Luftiges, modernes 2-Spalten-Layout für die Story */
+        .story-container {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 15px 35px -10px rgba(99, 102, 241, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        .story-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(to bottom, #6366f1, #a855f7, #ec4899);
+        }
+        .story-lead {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .story-grid-two {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            align-items: start;
+        }
+        .story-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .story-column p {
+            font-size: 1.05rem;
+            color: var(--text-secondary, #94a3b8);
+            line-height: 1.8;
+        }
+        .story-column p strong {
+            color: #f1f5f9;
+        }
+
+        /* Elegantes Signatur-Zitat */
+        .story-quote {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-style: italic;
+            color: #e2e8f0;
+            font-size: 1.05rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .story-quote span {
+            display: block;
+            margin-top: 0.4rem;
+            font-size: 0.85rem;
+            font-style: normal;
+            color: var(--primary-color, #818cf8);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Vergrösserte Projektabbildungen für eine bessere Sichtbarkeit */
+        .project-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation fixe -->
+    <!-- Feste Navigation -->
     <nav class="navbar">
         <div class="container nav-content">
             <a href="#" class="logo">Laurita<span>.dev</span></a>
             <ul class="nav-links">
                 <li><a href="#about">Über mich</a></li>
-                <li><a href="#focus">Fokus & Interessen</a></li>
+                <li><a href="#story">Meine Story</a></li>
+                <li><a href="#focus">Fokus</a></li>
                 <li><a href="#skills">Kompetenzen</a></li>
                 <li><a href="#projects">Projekte</a></li>
                 <li><a href="#contact">Kontakt</a></li>
-                <!-- Bouton Dark/Light Mode -->
+                <!-- Dark/Light Mode Umschalter -->
                 <li><button id="theme-toggle" class="theme-toggle-btn" title="Theme wechseln" aria-label="Theme wechseln">🌙</button></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero-Bereich -->
     <header class="hero">
         <div class="container">
             <span class="badge">RPTU Kaiserslautern-Landau</span>
@@ -56,15 +153,54 @@
                         KI und Softwareentwicklung sind meine Leidenschaft! Als Informatikstudentin an der RPTU Kaiserslautern-Landau mit dem Schwerpunkt <em>Intelligent Systems</em> verbinde ich fundierte theoretische Konzepte direkt mit der Praxis.
                     </p>
                     <p>
-                        Neben meinem Studium engagiere ich mich aktiv bei <strong>JustCode KL</strong>, sammle praktische Erfahrung im universitären Umfeld und entwickle mit Begeisterung eigene Web- und Softwareanwendungen.
+                        Neben meinem Studium engagiere ich mich aktiv bei <strong>JustCode KL</strong>, sammle wertvolle Praxiserfahrung und entwickle mit Begeisterung eigene Web- und Softwareanwendungen.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Fokus & Interessen -->
+        <!-- Meine Story & Motivation -->
+        <section id="story" class="section">
+            <h2 class="section-title">Hinter den Kulissen: Meine Story</h2>
+            
+            <div class="story-container">
+                <div class="story-lead">
+                    ✨ Von Jaunde nach Kaiserslautern: Eine Reise der Neugier, Ausdauer und Kreativität.
+                </div>
+                
+                <div class="story-grid-two">
+                    <!-- Linke Spalte: Der internationale Weg -->
+                    <div class="story-column">
+                        <p>
+                            Meine Geschichte beginnt in Jaunde (Kamerun), wo ich aufgewachsen bin und gelernt habe, dass man mit Entschlossenheit und Offenheit jede Grenze überwinden kann. 
+                        </p>
+                        <p>
+                            Der Schritt nach Deutschland und der erfolgreiche Erwerb des <strong>DSH-3-Zertifikats</strong> (C1-Niveau) waren für mich der beste Beweis, dass Sprache und Kultur keine Barrieren sind, sondern Brücken.
+                        </p>
+                    </div>
+
+                    <!-- Rechte Spalte: Leidenschaft, Design und Hobbys -->
+                    <div class="story-column">
+                        <p>
+                            Heute verbinde ich an der RPTU Kaiserslautern-Landau als Informatikstudentin im Schwerpunkt <em>Intelligent Systems</em> diese internationale Perspektive mit meiner wahren Leidenschaft: der <strong>Softwareentwicklung</strong>. Für mich ist Code nicht nur trockene Logik, sondern ein kreatives Werkzeug. Neben der Technik schlägt mein Herz ganz besonders für <strong>Mode, Kreativität und Design</strong> – eine Leidenschaft, die mir auch bei der Gestaltung ansprechender und benutzerfreundlicher Webanwendungen enorm zugutekommt.
+                        </p>
+                        <p>
+                            Wenn ich gerade nicht vor dem Bildschirm sitze, experimentiere ich in der Küche (wie bei meinem <em>Tortellini Timer</em>), verfolge Design-Trends oder reise gerne. Denn genau wie beim Programmieren gilt für mich: Mit der richtigen Mischung aus Struktur, Kreativität und Ästhetik entstehen die besten Ergebnisse.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Signatur-Zitat -->
+                <div class="story-quote">
+                    « Code ist Logik, Design ist Emotion. Erst wenn beides Hand in Hand geht, entsteht Software, die Menschen wirklich begeistert. »
+                    <span>— Meine Philosophie</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fokus & Fachbereiche -->
         <section id="focus" class="section">
-            <h2 class="section-title">Fokus & Interessen</h2>
+            <h2 class="section-title">Fokus & Fachbereiche</h2>
             <div class="skills-grid">
                 <div class="skill-card">
                     <h3>🤖 Intelligent Systems & KI</h3>
@@ -122,48 +258,32 @@
         <section id="projects" class="section">
             <h2 class="section-title">Projekte</h2>
             
-            <!-- Boutons de filtres interactifs -->
+            <!-- Interaktive Filtertasten -->
             <div class="project-filters">
                 <button class="filter-btn active" data-filter="all">Alle</button>
-                <button class="filter-btn" data-filter="web">Web (HTML/JS/React)</button>
+                <button class="filter-btn" data-filter="web">Web & KI</button>
                 <button class="filter-btn" data-filter="java">Java & Backend</button>
             </div>
 
             <div class="projects-grid">
 
-                <!-- Memory Matrix -->
+                <!-- 1. Lumina Code KI -->
                 <article class="project-card" data-category="web">
-                    <img src="images/memory-matrix.jpg" alt="Memory Matrix App" class="project-img">
+                    <img src="images/lumina code ki.jpg" alt="Lumina Code KI App" class="project-img">
                     <div class="project-body">
                         <div class="tags">
-                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                            <span>Python</span><span>Streamlit</span><span>Groq API</span>
                         </div>
-                        <h3>Memory Matrix</h3>
-                        <p>Ein interaktives visuelles Gedächtnisspiel zur Förderung der räumlichen Merkfähigkeit mit steigenden Schwierigkeitsstufen und dynamischer Raster-Generierung.</p>
+                        <h3>Lumina Code KI</h3>
+                        <p>Ein intelligenter, KI-gestützter Code-Mentor für tiefe Einblicke, interaktives Lernen und echte Lerneffekte mit Mehrsprachigkeit und Chat-Historie.</p>
                         <div class="project-links">
-                            <a href="https://laurita003.github.io/memory-matrix/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live-Demo</a>
-                            <a href="https://github.com/Laurita003/memory-matrix" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+                            <a href="https://lumina-code-ki-blzuvybngvappdnuwgyypna.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live-Demo</a>
+                            <a href="https://github.com/Laurita003/lumina-code-ki" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Tortellini Timer -->
-                <article class="project-card" data-category="web">
-                    <img src="images/Tortellini.jpg" alt="Tortellini Timer App" class="project-img">
-                    <div class="project-body">
-                        <div class="tags">
-                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
-                        </div>
-                        <h3>Tortellini Timer</h3>
-                        <p>Eine interaktive Pomodoro-Webanwendung zur präzisen Zeitmessung beim Kochen mit integrierter Aufgabenverwaltung und LocalStorage-Datenhaltung.</p>
-                        <div class="project-links">
-                            <a href="https://laurita003.github.io/Tortellini-Timer/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live-Demo</a>
-                            <a href="https://github.com/Laurita003/Tortellini-Timer" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Smart Mensa -->
+                <!-- 2. Smart Mensa -->
                 <article class="project-card" data-category="java">
                     <img src="images/mensa.jpg" alt="Smart Mensa App" class="project-img">
                     <div class="project-body">
@@ -178,9 +298,41 @@
                     </div>
                 </article>
 
-                <!-- Ticketverkauf -->
+                <!-- 3. Memory Matrix -->
+                <article class="project-card" data-category="web">
+                    <img src="images/memory-matrix.jpg" alt="Memory Matrix App" class="project-img">
+                    <div class="project-body">
+                        <div class="tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <h3>Memory Matrix</h3>
+                        <p>Ein interaktives visuelles Gedächtnisspiel zur Förderung der räumlichen Merkfähigkeit mit steigenden Schwierigkeitsstufen und dynamischer Raster-Generierung.</p>
+                        <div class="project-links">
+                            <a href="https://laurita003.github.io/Memory-Matrix/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live-Demo</a>
+                            <a href="https://github.com/Laurita003/Memory-Matrix" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 4. Tortellini Timer -->
+                <article class="project-card" data-category="web">
+                    <img src="images/tortellini.jpg" alt="Tortellini Timer App" class="project-img">
+                    <div class="project-body">
+                        <div class="tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
+                        </div>
+                        <h3>Tortellini Timer</h3>
+                        <p>Eine interaktive Pomodoro-Webanwendung zur präzisen Zeitmessung beim Kochen mit integrierter Aufgabenverwaltung und LocalStorage-Datenhaltung.</p>
+                        <div class="project-links">
+                            <a href="https://laurita003.github.io/Tortellini-Timer/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live-Demo</a>
+                            <a href="https://github.com/Laurita003/Tortellini-Timer" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5. Ticketverkauf -->
                 <article class="project-card" data-category="java">
-                    <img src="images/ticketverkauf.jpg" alt="Ticketverkauf App" class="project-img">
+                    <img src="images/ticket.jpg" alt="Ticketverkauf App" class="project-img">
                     <div class="project-body">
                         <div class="tags">
                             <span>Java</span><span>Concurrency</span><span>Multithreading</span>
@@ -189,36 +341,6 @@
                         <p>Entwicklung eines automatisierten Systems zur Ticketverwaltung mit Fokus auf Nebenläufigkeit und thread-sichere Datenverarbeitung.</p>
                         <div class="project-links">
                             <a href="https://github.com/Laurita003/Ticketverkauf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- FUTUR PROJET 5 (Prêt à être rempli) -->
-                <article class="project-card" data-category="web">
-                    <img src="images/placeholder.jpg" alt="Neues Projekt 5" class="project-img">
-                    <div class="project-body">
-                        <div class="tags">
-                            <span>Python</span><span>KI</span>
-                        </div>
-                        <h3>Neues Projekt 5</h3>
-                        <p>Hier entsteht bald dein nächstes spannendes Projekt im Bereich KI oder Web-Entwicklung.</p>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-outline btn-sm">Demnächst</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- FUTUR PROJET 6 (Prêt à être rempli) -->
-                <article class="project-card" data-category="java">
-                    <img src="images/placeholder.jpg" alt="Neues Projekt 6" class="project-img">
-                    <div class="project-body">
-                        <div class="tags">
-                            <span>Java</span><span>Algorithmen</span>
-                        </div>
-                        <h3>Neues Projekt 6</h3>
-                        <p>Hier entsteht dein sechstes Projekt.</p>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-outline btn-sm">Demnächst</a>
                         </div>
                     </div>
                 </article>
@@ -232,7 +354,7 @@
             <div class="contact-card">
                 <p>Haben Sie Fragen oder möchten Sie zusammenarbeiten? Schreiben Sie mir gerne eine Nachricht:</p>
                 <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                    <!-- Clé d'accès Web3Forms -->
+                    <!-- Web3Forms Zugriffsschlüssel -->
                     <input type="hidden" name="access_key" value="7bb0add9-6ae4-42ee-bfb0-9272dfc7e8cb">
                     
                     <div class="form-group">
@@ -243,7 +365,6 @@
                         <label for="email">E-Mail</label>
                         <input type="email" id="email" name="email" placeholder="ihre.email@example.com" required>
                     </div>
-                    <!-- Option Betreff (Sujet) ajoutée ici -->
                     <div class="form-group">
                         <label for="subject">Betreff</label>
                         <input type="text" id="subject" name="subject" placeholder="Worum geht es?" required>
@@ -270,7 +391,7 @@
         </div>
     </footer>
 
-    <!-- Fichier JavaScript (indispensable pour les effets !) -->
+    <!-- JavaScript-Datei -->
     <script src="script.js"></script>
 </body>
 </html>

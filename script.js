@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Effet curseur lumineux (Spotlight)
+    // 1. Leuchtender Cursor-Effekt (Spotlight) einrichten
     const cursorGlow = document.createElement("div");
     cursorGlow.id = "cursor-glow";
     document.body.appendChild(cursorGlow);
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cursorGlow.style.top = `${e.clientY}px`;
     });
 
-    // 2. Thème Dark / Light Mode avec sauvegarde
+    // 2. Dark / Light Mode Umschalter mit Speicherfunktion (LocalStorage)
     const themeToggle = document.getElementById("theme-toggle");
     const htmlElement = document.documentElement;
 
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         themeToggle.textContent = theme === "dark" ? "🌙" : "☀️";
     }
 
-    // 3. Filtres dynamiques des projets
+    // 3. Dynamisches Filtern der Projekte
     const filterButtons = document.querySelectorAll(".filter-btn");
     const projectCards = document.querySelectorAll(".project-card");
 
@@ -51,8 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 4. Système de Modale pour afficher les détails des projets au clic
-    // Création de la modale dans le DOM
+    // 4. Modal-System zur Anzeige von Projektdetails beim Anklicken
     const modalOverlay = document.createElement("div");
     modalOverlay.className = "modal-overlay";
     modalOverlay.innerHTML = `
@@ -70,45 +69,44 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalLinks = document.getElementById("modal-links");
     const modalClose = modalOverlay.querySelector(".modal-close");
 
-    // Données détaillées pour chaque projet
+    // Detaillierte Projektdaten
     const projectDetails = {
         "Memory Matrix": {
-            title: "Memory Matrix — Jeu de Mémoire Visuelle",
-            desc: "Développé en HTML, CSS et JavaScript pur. Ce projet implémente une grille dynamique qui teste et améliore la mémoire spatiale de l'utilisateur avec une gestion rigoureuse des états et des niveaux de difficulté progressifs.",
+            title: "Memory Matrix — Visuelles Gedächtnisspiel",
+            desc: "Entwickelt mit purem HTML, CSS und JavaScript. Dieses Projekt implementiert ein dynamisches Raster, das das räumliche Gedächtnis des Benutzers testet und verbessert, mit einer strengen Zustandsverwaltung und progressiven Schwierigkeitsstufen.",
             links: `
                 <a href="https://laurita003.github.io/memory-matrix/" target="_blank" class="btn btn-primary btn-sm">Live-Demo</a>
                 <a href="https://github.com/Laurita003/memory-matrix" target="_blank" class="btn btn-outline btn-sm">GitHub</a>
             `
         },
         "Tortellini Timer": {
-            title: "Tortellini Timer — Pomodoro & Tâches",
-            desc: "Une application web interactive conçue pour la gestion du temps de cuisson et de productivité. Elle intègre un compteur précis, une liste de tâches et une persistance des données via le LocalStorage du navigateur.",
+            title: "Tortellini Timer — Pomodoro & Aufgabenverwaltung",
+            desc: "Eine interaktive Webanwendung zur genauen Messung von Koch- und Produktivitätszeiten. Sie integriert einen präzisen Timer, eine Aufgabenliste und Datenspeicherung über den LocalStorage des Browsers.",
             links: `
                 <a href="https://laurita003.github.io/Tortellini-Timer/" target="_blank" class="btn btn-primary btn-sm">Live-Demo</a>
                 <a href="https://github.com/Laurita003/Tortellini-Timer" target="_blank" class="btn btn-outline btn-sm">GitHub</a>
             `
         },
         "Smart Mensa": {
-            title: "Smart Mensa — Application Agile RPTU",
-            desc: "Application full-stack développée en équipe universitaire avec Java (Spring Boot), React et MySQL. Permet de consulter les menus de la mensa de Kaiserslautern et de gérer ses plats favoris de façon fluide.",
+            title: "Smart Mensa — RPTU Agile Anwendung",
+            desc: "Full-Stack-Anwendung, die in einem universitären Team mit Java (Spring Boot), React und MySQL entwickelt wurde. Ermöglicht das Abrufen der Speisepläne der Mensa Kaiserslautern und die reibungslose Verwaltung von Lieblingsgerichten.",
             links: `
                 <a href="https://gitlab.rhrk.uni-kl.de/ruw43piz/smart-mensa" target="_blank" class="btn btn-outline btn-sm">GitLab</a>
             `
         },
         "Ticketverkauf": {
-            title: "Ticketverkauf — Gestion de Billetterie Java",
-            desc: "Système de vente et de gestion de tickets développé en Java pur. L'architecture met l'accent sur la programmation concurrente (Multithreading) et la sécurité des données partagées en mémoire.",
+            title: "Ticketverkauf — Java-Ticketverwaltungssystem",
+            desc: "Ticketverkauf- und Verwaltungssystem in purem Java. Die Architektur legt den Schwerpunkt auf nebenläufige Programmierung (Multithreading) und die Sicherheit gemeinsam genutzter Speicherdaten.",
             links: `
                 <a href="https://github.com/Laurita003/Ticketverkauf" target="_blank" class="btn btn-outline btn-sm">GitHub</a>
             `
         }
     };
 
-    // Ouvrir la modale lorsqu'on clique sur une carte de projet
+    // Modal öffnen, wenn auf eine Projektkarte geklickt wird
     projectCards.forEach(card => {
         card.style.cursor = "pointer";
         card.addEventListener("click", (e) => {
-            // Si on clique directement sur un lien de la carte, on ne déclenche pas la modale
             if (e.target.tagName === "A") return;
 
             const title = card.querySelector("h3").innerText;
@@ -133,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 5. Arrière-plan animé : Particules Réseau Neuronal
+    // 5. Animierter Hintergrund: Neuronales Netzwerk-Partikelsystem
     const canvas = document.createElement("canvas");
     canvas.id = "particle-canvas";
     document.body.prepend(canvas);
