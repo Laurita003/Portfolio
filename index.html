@@ -27,71 +27,109 @@
             object-position: center top;
         }
         
-        /* Luftiges, modernes 2-Spalten-Layout für die Story */
-        .story-container {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
-            border: 1px solid rgba(99, 102, 241, 0.35);
-            border-radius: 24px;
-            padding: 3rem;
+        /* Neues, modernes & luftiges Story-Design (Timeline / Steps) */
+        .story-wrapper {
             margin-top: 1.5rem;
-            box-shadow: 0 15px 35px -10px rgba(99, 102, 241, 0.25);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .story-header-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 20px;
+            padding: 1.75rem 2rem;
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+            text-align: center;
+        }
+
+        .story-lead {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #f8fafc;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        /* Kleine, elegante Mini-Blöcke (Steps) */
+        .story-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .story-step-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 1.75rem;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
             position: relative;
             overflow: hidden;
         }
-        .story-container::before {
+
+        .story-step-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .story-step-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 6px;
+            width: 4px;
             height: 100%;
-            background: linear-gradient(to bottom, #6366f1, #a855f7, #ec4899);
+            background: linear-gradient(to bottom, #6366f1, #a855f7);
         }
-        .story-lead {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #f8fafc;
-            margin-bottom: 2rem;
-            line-height: 1.5;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+
+        .story-step-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
         }
-        .story-grid-two {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            align-items: start;
-        }
-        .story-column {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-        .story-column p {
+
+        .story-step-title {
             font-size: 1.05rem;
-            color: var(--text-secondary, #94a3b8);
-            line-height: 1.8;
+            font-weight: 700;
+            color: #f1f5f9;
         }
-        .story-column p strong {
+
+        .story-step-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary, #94a3b8);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .story-step-card p strong {
             color: #f1f5f9;
         }
 
         /* Elegantes Signatur-Zitat */
         .story-quote {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px dashed rgba(99, 102, 241, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
             font-style: italic;
             color: #e2e8f0;
-            font-size: 1.05rem;
+            font-size: 1rem;
             text-align: center;
             line-height: 1.6;
         }
         .story-quote span {
             display: block;
             margin-top: 0.4rem;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-style: normal;
             color: var(--primary-color, #818cf8);
             letter-spacing: 0.05em;
@@ -163,29 +201,49 @@
         <section id="story" class="section">
             <h2 class="section-title">Hinter den Kulissen: Meine Story</h2>
             
-            <div class="story-container">
-                <div class="story-lead">
-                    ✨ Von Jaunde nach Kaiserslautern: Eine Reise der Neugier, Ausdauer und Kreativität.
+            <div class="story-wrapper">
+                <!-- Header / Intro -->
+                <div class="story-header-card">
+                    <div class="story-lead">
+                        ✨ Von Jaunde nach Kaiserslautern: Eine Reise der Neugier, Ausdauer und Kreativität.
+                    </div>
                 </div>
                 
-                <div class="story-grid-two">
-                    <!-- Linke Spalte: Der internationale Weg -->
-                    <div class="story-column">
+                <!-- Die Story in kleinen, fließenden Mini-Blöcken (Steps) -->
+                <div class="story-steps-grid">
+                    <!-- Schritt 1: Wurzeln -->
+                    <div class="story-step-card">
+                        <div class="story-step-icon">🌍</div>
+                        <div class="story-step-title">Die Wurzeln</div>
                         <p>
-                            Meine Geschichte beginnt in Jaunde (Kamerun), wo ich aufgewachsen bin und gelernt habe, dass man mit Entschlossenheit und Offenheit jede Grenze überwinden kann. 
-                        </p>
-                        <p>
-                            Der Schritt nach Deutschland und der erfolgreiche Erwerb des <strong>DSH-3-Zertifikats</strong> (C1-Niveau) waren für mich der beste Beweis, dass Sprache und Kultur keine Barrieren sind, sondern Brücken.
+                            Meine Geschichte beginnt in Jaunde (Kamerun), wo ich gelernt habe, dass man mit Entschlossenheit und Offenheit jede Grenze überwinden kann.
                         </p>
                     </div>
 
-                    <!-- Rechte Spalte: Leidenschaft, Design und Hobbys -->
-                    <div class="story-column">
+                    <!-- Schritt 2: Der Weg nach Deutschland -->
+                    <div class="story-step-card">
+                        <div class="story-step-icon">🚀</div>
+                        <div class="story-step-title">Der Sprung</div>
                         <p>
-                            Heute verbinde ich an der RPTU Kaiserslautern-Landau als Informatikstudentin im Schwerpunkt <em>Intelligent Systems</em> diese internationale Perspektive mit meiner wahren Leidenschaft: der <strong>Softwareentwicklung</strong>. Für mich ist Code nicht nur trockene Logik, sondern ein kreatives Werkzeug. Neben der Technik schlägt mein Herz ganz besonders für <strong>Mode, Kreativität und Design</strong> – eine Leidenschaft, die mir auch bei der Gestaltung ansprechender und benutzerfreundlicher Webanwendungen enorm zugutekommt.
+                            Der Schritt nach Deutschland und der erfolgreiche Erwerb des <strong>DSH-3-Zertifikats</strong> (C1-Niveau) zeigten mir, dass Sprache und Kultur keine Barrieren, sondern Brücken sind.
                         </p>
+                    </div>
+
+                    <!-- Schritt 3: Informatik & Design -->
+                    <div class="story-step-card">
+                        <div class="story-step-icon">💻</div>
+                        <div class="story-step-title">Logik & Ästhetik</div>
                         <p>
-                            Wenn ich gerade nicht vor dem Bildschirm sitze, experimentiere ich in der Küche (wie bei meinem <em>Tortellini Timer</em>), verfolge Design-Trends oder reise gerne. Denn genau wie beim Programmieren gilt für mich: Mit der richtigen Mischung aus Struktur, Kreativität und Ästhetik entstehen die besten Ergebnisse.
+                            An der RPTU verbinde ich im Schwerpunkt <em>Intelligent Systems</em> Code mit meiner Leidenschaft für <strong>Mode, Kreativität und Design</strong> für ansprechende Web-Apps.
+                        </p>
+                    </div>
+
+                    <!-- Schritt 4: Freizeit & Balance -->
+                    <div class="story-step-card">
+                        <div class="story-step-icon">✨</div>
+                        <div class="story-step-title">Ausgleich</div>
+                        <p>
+                            Ob beim Kochen (wie beim <em>Tortellini Timer</em>) oder beim Reisen: Mit Struktur, Kreativität und Ästhetik entstehen die besten Ergebnisse.
                         </p>
                     </div>
                 </div>
@@ -341,6 +399,22 @@
                         <p>Entwicklung eines automatisierten Systems zur Ticketverwaltung mit Fokus auf Nebenläufigkeit und thread-sichere Datenverarbeitung.</p>
                         <div class="project-links">
                             <a href="https://github.com/Laurita003/Ticketverkauf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 6. Number Guessing Game -->
+                <article class="project-card" data-category="web">
+                    <img src="images/Number Guessing Game.jpg" alt="Number Guessing Game App" class="project-img">
+                    <div class="project-body">
+                        <div class="tags">
+                            <span>Python</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <h3>Number Guessing Game</h3>
+                        <p>Ein interaktives Zahlenratespiel mit verschiedenen Schwierigkeitsgraden, intelligenter Eingabevalidierung, Versuchshistorie und direktem Replay-Modus.</p>
+                        <div class="project-links">
+                            <a href="https://laurita003.github.io/Number-Guessing-Game-App/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live-Demo</a>
+                            <a href="https://github.com/Laurita003/Number-Guessing-Game" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
                         </div>
                     </div>
                 </article>
