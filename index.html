@@ -26,8 +26,8 @@
             object-fit: cover;
             object-position: center top;
         }
-        
-        /* Neues, modernes & luftiges Story-Design (Timeline / Steps) */
+
+        /* Story-Design mit klarem Kontrast für Dark & Light Mode */
         .story-wrapper {
             margin-top: 1.5rem;
             display: flex;
@@ -36,18 +36,16 @@
         }
 
         .story-header-card {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
-            border: 1px solid rgba(99, 102, 241, 0.3);
             border-radius: 20px;
             padding: 1.75rem 2rem;
-            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
             text-align: center;
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         .story-lead {
             font-size: 1.15rem;
             font-weight: 700;
-            color: #f8fafc;
             line-height: 1.5;
             display: flex;
             align-items: center;
@@ -55,31 +53,28 @@
             gap: 0.75rem;
         }
 
-        /* Kleine, elegante Mini-Blöcke (Steps) */
         .story-steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
         }
 
         .story-step-card {
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 18px;
             padding: 1.75rem;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(99, 102, 241, 0.22);
         }
 
         .story-step-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(99, 102, 241, 0.5);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(99, 102, 241, 0.6);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
         }
 
         .story-step-card::before {
@@ -100,40 +95,88 @@
         .story-step-title {
             font-size: 1.05rem;
             font-weight: 700;
-            color: #f1f5f9;
         }
 
         .story-step-card p {
             font-size: 0.95rem;
-            color: var(--text-secondary, #94a3b8);
             line-height: 1.6;
             margin: 0;
         }
 
-        .story-step-card p strong {
-            color: #f1f5f9;
-        }
-
-        /* Elegantes Signatur-Zitat */
         .story-quote {
-            background: rgba(15, 23, 42, 0.7);
-            border: 1px dashed rgba(99, 102, 241, 0.3);
+            border: 1px dashed rgba(99, 102, 241, 0.45);
             border-radius: 16px;
             padding: 1.5rem 2rem;
             font-style: italic;
-            color: #e2e8f0;
             font-size: 1rem;
             text-align: center;
             line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
         .story-quote span {
             display: block;
             margin-top: 0.4rem;
             font-size: 0.8rem;
             font-style: normal;
-            color: var(--primary-color, #818cf8);
+            font-weight: 600;
             letter-spacing: 0.05em;
             text-transform: uppercase;
+        }
+
+        /* DARK MODE (mode nuit) */
+        [data-theme="dark"] .story-header-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #f8fafc;
+        }
+        [data-theme="dark"] .story-lead {
+            color: #f8fafc;
+        }
+        [data-theme="dark"] .story-step-card {
+            background: #1e293b;
+            color: #cbd5e1;
+        }
+        [data-theme="dark"] .story-step-title {
+            color: #f8fafc;
+        }
+        [data-theme="dark"] .story-step-card p,
+        [data-theme="dark"] .story-step-card p strong {
+            color: #e2e8f0;
+        }
+        [data-theme="dark"] .story-quote {
+            background: #0f172a;
+            color: #f1f5f9;
+        }
+        [data-theme="dark"] .story-quote span {
+            color: #a5b4fc;
+        }
+
+        /* LIGHT MODE (mode clair) */
+        [data-theme="light"] .story-header-card {
+            background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+            color: #0f172a;
+        }
+        [data-theme="light"] .story-lead {
+            color: #0f172a;
+        }
+        [data-theme="light"] .story-step-card {
+            background: #ffffff;
+            color: #334155;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+        }
+        [data-theme="light"] .story-step-title {
+            color: #0f172a;
+        }
+        [data-theme="light"] .story-step-card p,
+        [data-theme="light"] .story-step-card p strong {
+            color: #334155;
+        }
+        [data-theme="light"] .story-quote {
+            background: #f8fafc;
+            color: #1e293b;
+        }
+        [data-theme="light"] .story-quote span {
+            color: #4f46e5;
         }
 
         /* Vergrösserte Projektabbildungen für eine bessere Sichtbarkeit */
@@ -167,9 +210,9 @@
     <!-- Hero-Bereich -->
     <header class="hero">
         <div class="container">
-            <span class="badge">RPTU Kaiserslautern-Landau</span>
+            <span class="badge">RPTU Kaiserslautern-Landau · Intelligent Systems</span>
             <h1>Laurita Elsa Kenfack</h1>
-            <p class="subtitle">B.Sc. Informatik — Schwerpunkt <strong>Intelligent Systems</strong></p>
+            <p class="subtitle">B.Sc. Informatik — Leidenschaft für <strong>KI, Machine Learning &amp; Mathematik</strong></p>
             <div class="hero-actions">
                 <a href="#projects" class="btn btn-primary">Projekte ansehen</a>
                 <a href="CV_Laurita%20Elsa_Kenfack.pdf" download="CV_Laurita_Elsa_Kenfack.pdf" class="btn btn-outline">📄 Lebenslauf herunterladen</a>
@@ -188,10 +231,10 @@
                 </div>
                 <div class="about-text">
                     <p>
-                        KI und Softwareentwicklung sind meine Leidenschaft! Als Informatikstudentin an der RPTU Kaiserslautern-Landau mit dem Schwerpunkt <em>Intelligent Systems</em> verbinde ich fundierte theoretische Konzepte direkt mit der Praxis.
+                        Künstliche Intelligenz, <strong>Machine Learning</strong> und <strong>Mathematik</strong> begeistern mich zutiefst! Als Informatikstudentin an der RPTU Kaiserslautern-Landau mit dem Schwerpunkt <em>Intelligent Systems</em> liebe ich es, mathematische Strukturen zu durchdringen und in intelligente, praxisnahe Softwarelösungen zu übersetzen.
                     </p>
                     <p>
-                        Neben meinem Studium engagiere ich mich aktiv bei <strong>JustCode KL</strong>, sammle wertvolle Praxiserfahrung und entwickle mit Begeisterung eigene Web- und Softwareanwendungen.
+                        Ob lineare Algebra, Analysis, numerische Modelle oder moderne KI-Systeme: Mir geht es nicht nur darum, Werkzeuge anzuwenden, sondern ihre Funktionsweise im Kern zu verstehen. Ergänzt durch mein Engagement bei <strong>JustCode KL</strong> und eigene Softwareprojekte verbinde ich analytische Tiefe mit Freude an sauberer Umsetzung.
                     </p>
                 </div>
             </div>
@@ -205,7 +248,7 @@
                 <!-- Header / Intro -->
                 <div class="story-header-card">
                     <div class="story-lead">
-                        ✨ Von Jaunde nach Kaiserslautern: Eine Reise der Neugier, Ausdauer und Kreativität.
+                        ✨ Von Jaunde nach Kaiserslautern: Eine Reise aus mathematischer Neugier, Ausdauer und KI-Begeisterung.
                     </div>
                 </div>
                 
@@ -216,7 +259,7 @@
                         <div class="story-step-icon">🌍</div>
                         <div class="story-step-title">Die Wurzeln</div>
                         <p>
-                            Meine Geschichte beginnt in Jaunde (Kamerun), wo ich gelernt habe, dass man mit Entschlossenheit und Offenheit jede Grenze überwinden kann.
+                            Meine Geschichte beginnt in Jaunde (Kamerun), wo ich gelernt habe, dass man mit Entschlossenheit, Neugier und Offenheit jede Grenze überwinden kann.
                         </p>
                     </div>
 
@@ -229,28 +272,28 @@
                         </p>
                     </div>
 
-                    <!-- Schritt 3: Informatik & Design -->
+                    <!-- Schritt 3: Mathematik, ML & KI -->
                     <div class="story-step-card">
-                        <div class="story-step-icon">💻</div>
-                        <div class="story-step-title">Logik & Ästhetik</div>
+                        <div class="story-step-icon">🧮</div>
+                        <div class="story-step-title">Mathematik, ML &amp; KI</div>
                         <p>
-                            An der RPTU verbinde ich im Schwerpunkt <em>Intelligent Systems</em> Code mit meiner Leidenschaft für <strong>Mode, Kreativität und Design</strong> für ansprechende Web-Apps.
+                            Im Schwerpunkt <em>Intelligent Systems</em> fasziniert mich, wie <strong>Mathematik</strong> und <strong>Machine Learning</strong> zusammenwirken — von Vektoren und Optimierung bis hin zu lernenden Systemen und LLMs.
                         </p>
                     </div>
 
-                    <!-- Schritt 4: Freizeit & Balance -->
+                    <!-- Schritt 4: Logik, Ästhetik & Balance -->
                     <div class="story-step-card">
                         <div class="story-step-icon">✨</div>
-                        <div class="story-step-title">Ausgleich</div>
+                        <div class="story-step-title">Logik, Design &amp; Ausgleich</div>
                         <p>
-                            Ob beim Kochen (wie beim <em>Tortellini Timer</em>) oder beim Reisen: Mit Struktur, Kreativität und Ästhetik entstehen die besten Ergebnisse.
+                            Ich schätze klare Strukturen und Ästhetik — im Code ebenso wie bei Mode, Reisen oder beim Kochen (wie beim <em>Tortellini Timer</em>).
                         </p>
                     </div>
                 </div>
 
                 <!-- Signatur-Zitat -->
                 <div class="story-quote">
-                    « Code ist Logik, Design ist Emotion. Erst wenn beides Hand in Hand geht, entsteht Software, die Menschen wirklich begeistert. »
+                    « Mathematik und Logik geben Systemen ihr Fundament, während KI und gutes Design Ideen zum Leben erwecken. »
                     <span>— Meine Philosophie</span>
                 </div>
             </div>
@@ -258,24 +301,24 @@
 
         <!-- Fokus & Fachbereiche -->
         <section id="focus" class="section">
-            <h2 class="section-title">Fokus & Fachbereiche</h2>
+            <h2 class="section-title">Fokus &amp; Fachbereiche</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>🤖 Intelligent Systems & KI</h3>
+                    <h3>🤖 Machine Learning &amp; KI</h3>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem;">
-                        Fasziniert von maschinellem Lernen, algorithmischer Datenmodellierung und intelligenten Systemen zur Automatisierung komplexer Probleme.
+                        Große Begeisterung für <strong>Machine Learning</strong>, intelligente Systeme und moderne KI-Anwendungen (z. B. LLM-gestützte Werkzeuge wie <em>Lumina Code KI</em>) mit Fokus auf nachvollziehbare Algorithmen und echten Nutzen.
                     </p>
                 </div>
                 <div class="skill-card">
-                    <h3>⚡ Scientific Computing</h3>
+                    <h3>📐 Mathematik &amp; Scientific Computing</h3>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem;">
-                        Praktische Erfahrung in mathematischer 3D-Visualisierung, numerischen Simulationen und Datenanalyse mit Python (NumPy, Pandas, Matplotlib).
+                        Starke Freude an mathematischen Grundlagen und <strong>Scientific Computing</strong>: numerische Verfahren, lineare Systeme, Simulationen und 3D-Datenvisualisierung mit Python (NumPy, Pandas, Matplotlib).
                     </p>
                 </div>
                 <div class="skill-card">
-                    <h3>🤝 Community & Teamwork</h3>
+                    <h3>🤝 Softwareentwicklung &amp; Community</h3>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem;">
-                        Aktives Engagement bei <strong>JustCode KL</strong> zur Unterstützung anderer Studierender beim Erlernen moderner Programmierparadigmen und agiler Web-APIs.
+                        Solide Softwarearchitektur und aktives Engagement bei <strong>JustCode KL</strong> — beim gemeinsamen Entwickeln, Diskutieren und Unterstützen anderer Studierender.
                     </p>
                 </div>
             </div>
@@ -283,8 +326,20 @@
 
         <!-- Kompetenzen -->
         <section id="skills" class="section">
-            <h2 class="section-title">Kompetenzen & Technologien</h2>
+            <h2 class="section-title">Kompetenzen &amp; Technologien</h2>
             <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>KI, ML &amp; Mathematik</h3>
+                    <div class="tags">
+                        <span>Machine Learning</span><span>KI / LLMs</span><span>Lineare Algebra</span><span>Analysis</span><span>Python</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>F#</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Backend &amp; Software</h3>
+                    <div class="tags">
+                        <span>Java</span><span>Spring Boot</span><span>REST-API</span><span>Multithreading</span><span>C / C++</span>
+                    </div>
+                </div>
                 <div class="skill-card">
                     <h3>Web-Entwicklung</h3>
                     <div class="tags">
@@ -292,19 +347,7 @@
                     </div>
                 </div>
                 <div class="skill-card">
-                    <h3>Backend & Software</h3>
-                    <div class="tags">
-                        <span>Java</span><span>Spring Boot</span><span>REST-API</span><span>Multithreading</span><span>C / C++</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>Data & Mathematik</h3>
-                    <div class="tags">
-                        <span>Python</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>F#</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3>Datenbanken & Tools</h3>
+                    <h3>Datenbanken &amp; Tools</h3>
                     <div class="tags">
                         <span>MySQL</span><span>PostgreSQL</span><span>Git</span><span>GitHub / GitLab</span><span>IntelliJ</span>
                     </div>
@@ -319,18 +362,19 @@
             <!-- Interaktive Filtertasten -->
             <div class="project-filters">
                 <button class="filter-btn active" data-filter="all">Alle</button>
-                <button class="filter-btn" data-filter="web">Web & KI</button>
-                <button class="filter-btn" data-filter="java">Java & Backend</button>
+                <button class="filter-btn" data-filter="ai-math">KI, ML &amp; Maths</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="java">Java &amp; Backend</button>
             </div>
 
             <div class="projects-grid">
 
                 <!-- 1. Lumina Code KI -->
-                <article class="project-card" data-category="web">
+                <article class="project-card" data-category="ai-math">
                     <img src="images/lumina code ki.jpg" alt="Lumina Code KI App" class="project-img">
                     <div class="project-body">
                         <div class="tags">
-                            <span>Python</span><span>Streamlit</span><span>Groq API</span>
+                            <span>KI / LLM</span><span>Python</span><span>Streamlit</span><span>Groq API</span>
                         </div>
                         <h3>Lumina Code KI</h3>
                         <p>Ein intelligenter, KI-gestützter Code-Mentor für tiefe Einblicke, interaktives Lernen und echte Lerneffekte mit Mehrsprachigkeit und Chat-Historie.</p>
@@ -426,10 +470,10 @@
         <section id="contact" class="section">
             <h2 class="section-title">Kontakt</h2>
             <div class="contact-card">
-                <p>Haben Sie Fragen oder möchten Sie zusammenarbeiten? Schreiben Sie mir gerne eine Nachricht:</p>
-                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                    <!-- Web3Forms Zugriffsschlüssel -->
-                    <input type="hidden" name="access_key" value="7bb0add9-6ae4-42ee-bfb0-9272dfc7e8cb">
+                <p>Haben Sie Fragen zu KI, Machine Learning, Softwareentwicklung oder möchten Sie zusammenarbeiten? Schreiben Sie mir gerne eine Nachricht:</p>
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contact-form">
+                    <!-- Zugriffsschlüssel wird bewusst nicht direkt im HTML hinterlegt -->
+                    <input type="hidden" name="access_key" id="web3forms-access-key" value="">
                     
                     <div class="form-group">
                         <label for="name">Name</label>
